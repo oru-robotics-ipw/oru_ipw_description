@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="rigidlink" xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+ <!-- NOTE! Must have a mass/inertial so that Gazebo does not ignore these... -->
+  <xacro:macro name="rigid_link"
+               params="name parent translateX translateY translateZ rotX:=0.0 rotY:=0.0 rotZ:=0.0">
+    <link name="${name}">
+      <inertial>
+        <origin xyz="0 0 1" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia
+          ixx="1.0" ixy="0.0" ixz="0.0"
+          iyy="1.0" iyz="0.0"
+          izz="1.0"/>
+      </inertial>
+    </link>
+ 
+    <gazebo reference="${name}">
+      <turnGravityOff>true</turnGravityOff>
+      <material>Gazebo/Orange</material>
+    </gazebo>
+ 
+    <joint name="${name}_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${name}"/>
+      <origin xyz="${translateX} ${translateY} ${translateZ}" rpy="${rotX} ${rotY} ${rotZ}" /> 
+    </joint>
+    
+  </xacro:macro>
+</robot>
