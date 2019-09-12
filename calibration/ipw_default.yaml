@@ -1,0 +1,21 @@
+zeros:
+  mounting_frame_link_x_offset_joint: 0.0
+  mounting_frame_link_y_offset_joint: 0.0
+  mounting_frame_link_z_offset_joint: 0.0
+  mounting_frame_link_pitch_joint:    0.0
+  mounting_frame_link_roll_joint:     0.0
+  mounting_frame_link_yaw_joint:      0.0
+
+  velodyne_x_offset_joint: 0.0
+  velodyne_y_offset_joint: 0.0
+  velodyne_z_offset_joint: 0.0
+  velodyne_pitch_joint:    0.0
+  velodyne_roll_joint:     0.0
+  velodyne_yaw_joint:      0.0
+
+  camera_link_x_offset_joint: 0.0
+  camera_link_y_offset_joint: 0.0
+  camera_link_z_offset_joint: 0.0
+  camera_link_pitch_joint:    -0.20
+  camera_link_roll_joint:     0.0
+  camera_link_yaw_joint:      0.0

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="automower_ipw" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find am_description)/urdf/automower.urdf.xacro" />
-  <xacro:include filename="$(find oru_ipw_description)/urdf/rigid_link.urdf.xacro" />
+  <xacro:include filename="$(find oru_ipw_description)/urdf/link_calibration.urdf.xacro" />
 
   <!-- Various measurements -->
   <xacro:property name="frame_xoff_base_link" value="-0.134" />
@@ -16,21 +16,21 @@
 
   <!-- Define some helper TF frames -->
   <!-- Middle of back aluminum profile, on the upper inside (marked with black pen) -->
-  <rigid_link name="mounting_frame_link"
-              parent="base_link"
-              translateX="${frame_xoff_base_link}"
-              translateY="0.0"
-              translateZ="${frame_zoff_base_link}" />
+  <link_calibration name="mounting_frame_link"
+                    parent="base_link"
+                    translateX="${frame_xoff_base_link}"
+                    translateY="0.0"
+                    translateZ="${frame_zoff_base_link}" />
 
   <!-- Define extra sensors -->
-  <rigid_link name="velodyne"
-              parent="mounting_frame_link"
-              translateX="${velodyne_xoff_frame}"
-              translateY="0.0"
-              translateZ="${velodyne_base_zoff_frame + velodyne_laser_center_zoff}" />
-  <rigid_link name="camera_link"
-              parent="mounting_frame_link"
-              translateX="${realsense_xoff_frame}"
-              translateY="0.0"
-              translateZ="0.0" />
+  <link_calibration name="velodyne"
+                    parent="mounting_frame_link"
+                    translateX="${velodyne_xoff_frame}"
+                    translateY="0.0"
+                    translateZ="${velodyne_base_zoff_frame + velodyne_laser_center_zoff}" />
+  <link_calibration name="camera_link"
+                    parent="mounting_frame_link"
+                    translateX="${realsense_xoff_frame}"
+                    translateY="0.0"
+                    translateZ="0.0" />
 </robot>

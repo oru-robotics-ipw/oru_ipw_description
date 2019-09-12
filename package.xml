@@ -2,7 +2,7 @@
 <package format="2">
   <name>oru_ipw_description</name>
   <version>0.0.1</version>
-  <description>The oru_ipw_description package</description>
+  <description>Robot description and calibration files for ORU IPW</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

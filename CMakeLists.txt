@@ -189,6 +189,10 @@ install(FILES
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
 )
 
+install(FILES
+  launch/automower_robot_description.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 #############
 ## Testing ##
