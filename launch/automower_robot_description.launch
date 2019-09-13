@@ -1,5 +1,5 @@
 <launch>
-  <arg name="calibration" default="true"
+  <arg name="calibration" default="false"
        doc="Set to true to enable GUI for sensor position calibration" />
 
   <!-- urdf xml robot description loaded on the Parameter Server-->
