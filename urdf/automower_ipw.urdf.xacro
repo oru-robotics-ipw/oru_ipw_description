@@ -4,7 +4,7 @@
   <xacro:include filename="$(find oru_ipw_description)/urdf/link_calibration.urdf.xacro" />
 
   <!-- Various measurements -->
-  <xacro:property name="frame_xoff_base_link" value="-0.134" />
+  <xacro:property name="frame_xoff_base_link" value="-0.10" />
   <xacro:property name="frame_zoff_base_link" value="0.18041" />
 
   <xacro:property name="realsense_xoff_frame" value="0.46" />
