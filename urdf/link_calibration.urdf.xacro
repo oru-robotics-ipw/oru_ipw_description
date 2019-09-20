@@ -5,12 +5,11 @@
                params="name">
     <link name="${name}">
       <inertial>
-        <origin xyz="0 0 1" rpy="0 0 0"/>
-        <mass value="0.01"/>
-        <inertia
-          ixx="1.0" ixy="0.0" ixz="0.0"
-          iyy="1.0" iyz="0.0"
-          izz="1.0"/>
+        <origin xyz="0 0 1" rpy="0 0 0" />
+        <mass value="0.01" />
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+                 iyy="1.0" iyz="0.0"
+                 izz="1.0" />
       </inertial>
     </link>
   </xacro:macro>
@@ -20,8 +19,8 @@
     <joint name="${name}_joint" type="prismatic">
       <parent link="${parent}" />
       <child link="${name}" />
-      <axis xyz="${axis}"/>
-      <limit lower="-0.5" upper="+0.5" effort="999" velocity="999"/>
+      <axis xyz="${axis}" />
+      <limit lower="-0.5" upper="+0.5" effort="999" velocity="999" />
     </joint>
   </xacro:macro>
 
@@ -30,8 +29,8 @@
     <joint name="${name}_joint" type="revolute">
       <parent link="${parent}" />
       <child link="${name}" />
-      <axis xyz="${axis}"/>
-      <limit lower="-0.5" upper="+0.5" effort="999" velocity="999"/>
+      <axis xyz="${axis}" />
+      <limit lower="-0.5" upper="+0.5" effort="999" velocity="999" />
     </joint>
   </xacro:macro>
 
@@ -54,8 +53,8 @@
 
     <!-- Base offset -->
     <joint name="${name}_joint" type="fixed">
-      <parent link="${parent}"/>
-      <child link="${name}_base"/>
+      <parent link="${parent}" />
+      <child link="${name}_base" />
       <origin xyz="${translateX} ${translateY} ${translateZ}" rpy="${rotX} ${rotY} ${rotZ}" />
     </joint>
 
@@ -64,22 +63,22 @@
                                  axis="1 0 0" />
     <prismatic_calibration_joint name="${name}_y_offset"
                                  parent="${name}_x_offset"
-                                 axis="0 1 0"/>
+                                 axis="0 1 0" />
     <prismatic_calibration_joint name="${name}_z_offset"
                                  parent="${name}_y_offset"
-                                 axis="0 0 1"/>
+                                 axis="0 0 1" />
     <revolute_calibration_joint name="${name}_pitch"
                                 parent="${name}_z_offset"
-                                axis="0 1 0"/>
+                                axis="0 1 0" />
     <revolute_calibration_joint name="${name}_roll"
                                 parent="${name}_pitch"
-                                axis="1 0 0"/>
+                                axis="1 0 0" />
     <revolute_calibration_joint name="${name}_yaw"
                                 parent="${name}_roll"
-                                axis="0 0 1"/>
+                                axis="0 0 1" />
     <joint name="${name}_final_joint" type="fixed">
-      <parent link="${name}_yaw"/>
-      <child link="${name}"/>
+      <parent link="${name}_yaw" />
+      <child link="${name}" />
     </joint>
   </xacro:macro>
 </robot>
