@@ -17,5 +17,4 @@
     <param name="publish_frequency" value="50" /> <!-- Hz -->
     <param name="use_tf_static" value="true" />
   </node>
-
 </launch>

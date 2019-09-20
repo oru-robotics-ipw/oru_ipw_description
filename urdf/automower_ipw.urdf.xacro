@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="automower_ipw" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find am_description)/urdf/automower.urdf.xacro" />
-  <xacro:include filename="$(find oru_ipw_description)/urdf/link_calibration.urdf.xacro" />
+  <xacro:include filename="$(find oru_ipw_description)/urdf/links.urdf.xacro" />
 
   <!-- Various measurements -->
   <xacro:property name="frame_xoff_base_link" value="-0.10" />
@@ -13,6 +13,8 @@
   <xacro:property name="velodyne_base_zoff_frame" value="0.41" />
   <!-- From Velodyne datasheet -->
   <xacro:property name="velodyne_laser_center_zoff" value="0.0378" />
+
+  <fixed_link name="base_link_inverted" parent="base_link" rotZ="${M_PI}" />
 
   <!-- Define some helper TF frames -->
   <!-- Middle of back aluminum profile, on the upper inside (marked with black pen) -->
