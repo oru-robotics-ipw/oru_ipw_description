@@ -54,7 +54,7 @@
 
   <!-- NOTE! Must have a mass/inertial so that Gazebo does not ignore these... -->
   <xacro:macro name="link_calibration"
-               params="name parent translateX translateY translateZ rotX:=0.0 rotY:=0.0 rotZ:=0.0">
+               params="name parent translateX:=0.0 translateY:=0.0 translateZ:=0.0 rotX:=0.0 rotY:=0.0 rotZ:=0.0">
     <inertial_link name="${name}_base" />
     <inertial_link name="${name}_x_offset" />
     <inertial_link name="${name}_y_offset" />
