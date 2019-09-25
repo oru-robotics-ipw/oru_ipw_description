@@ -5,9 +5,9 @@ project(oru_ipw_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  am_description
   urdf
   xacro
-  am_description
 )
 
 ## System dependencies are found with CMake's conventions
@@ -183,15 +183,12 @@ include_directories(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-install(FILES
-  urdf/rigid_link.urdf.xacro
-  urdf/automower_ipw.urdf.xacro
+install(DIRECTORY urdf/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
 )
 
-install(FILES
-  launch/automower_robot_description.launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch/
 )
 
 #############
