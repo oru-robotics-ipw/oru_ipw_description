@@ -8,8 +8,8 @@
   <xacro:property name="frame_xoff_base_link" value="-0.10" />
   <xacro:property name="frame_zoff_base_link" value="0.18041" />
 
-  <xacro:property name="realsense_xoff_frame" value="0.46" />
-  <xacro:property name="realsense_zoff_frame" value="0.06" />
+  <xacro:property name="camera_xoff_frame" value="0.46" />
+  <xacro:property name="camera_zoff_frame" value="0.085" />
 
   <xacro:property name="velodyne_base_zoff_frame" value="0.326" />
   <xacro:property name="velodyne_xoff_frame" value="${0.245 + 0.02 + 0.0774}" />
@@ -49,6 +49,6 @@
                     translateZ="${velodyne_base_thickness + velodyne_laser_center_zoff}" />
   <link_calibration name="camera_link"
                     parent="mounting_frame_link"
-                    translateX="${realsense_xoff_frame}"
-                    translateZ="${realsense_zoff_frame}" />
+                    translateX="${camera_xoff_frame}"
+                    translateZ="${camera_zoff_frame}" />
 </robot>

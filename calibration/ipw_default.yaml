@@ -13,9 +13,9 @@ zeros:
   velodyne_roll_joint:     0.0
   velodyne_yaw_joint:      0.0
 
-  camera_link_x_offset_joint: 0.0
+  camera_link_x_offset_joint: 0.12
   camera_link_y_offset_joint: 0.0
-  camera_link_z_offset_joint: -0.01
-  camera_link_pitch_joint:    0.18
+  camera_link_z_offset_joint: 0.0
+  camera_link_pitch_joint:    0.0
   camera_link_roll_joint:     0.0
-  camera_link_yaw_joint:      0.0
+  camera_link_yaw_joint:      0.03
