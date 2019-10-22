@@ -13,7 +13,7 @@
   </node>
 
   <!-- publish all the frames to TF -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
     <param name="publish_frequency" value="50" /> <!-- Hz -->
     <param name="use_tf_static" value="true" />
   </node>
